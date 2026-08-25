@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperación de Contraseña</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f7;
+      font-family: Arial, Helvetica, sans-serif;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="background-color: #f4f4f7; padding: 20px 0"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="480"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              background-color: #ffffff;
+              border-radius: 8px;
+              overflow: hidden;
+            "
+          >
+            <!-- Logo sobre fondo oscuro -->
+            <tr>
+              <td
+                align="center"
+                style="padding: 24px 20px; background-color: #111827"
+              >
+                <img
+                  src="{{logoUrl}}"
+                  alt="Logo"
+                  width="140"
+                  style="display: block; max-width: 140px"
+                />
+              </td>
+            </tr>
+
+            <!-- Título -->
+            <tr>
+              <td align="center" style="padding: 20px 30px 0 30px">
+                <h2 style="margin: 0; color: #222222; font-size: 20px">
+                  Contraseña {{system}}
+                </h2>
+              </td>
+            </tr>
+
+            <!-- Cuerpo -->
+            <tr>
+              <td
+                style="
+                  padding: 20px 30px;
+                  color: #444444;
+                  font-size: 15px;
+                  line-height: 1.5;
+                "
+              >
+                <p>Esta es tu contraseña de acceso:</p>
+              </td>
+            </tr>
+
+            <!-- Contraseña -->
+            <tr>
+              <td align="center" style="padding: 10px 30px 20px 30px">
+                <div
+                  style="
+                    background-color: #f4f4f7;
+                    border-radius: 6px;
+                    padding: 14px 20px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    color: #111827;
+                    display: inline-block;
+                  "
+                >
+                  {{password}}
+                </div>
+              </td>
+            </tr>
+
+            <!-- Aviso -->
+            <tr>
+              <td
+                style="
+                  padding: 0 30px 20px 30px;
+                  color: #888888;
+                  font-size: 13px;
+                  line-height: 1.5;
+                "
+              >
+                <p>
+                  Por seguridad, te recomendamos cambiar esta contraseña después
+                  de iniciar sesión.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                align="center"
+                style="
+                  padding: 20px 30px;
+                  background-color: #f9f9f9;
+                  color: #aaaaaa;
+                  font-size: 12px;
+                "
+              >
+                {{nombreEmpresa}} · Este es un correo automático, no respondas a
+                este mensaje.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
