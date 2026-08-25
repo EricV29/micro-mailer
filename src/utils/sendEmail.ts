@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import nodemailer from "nodemailer";
 import { Resend } from "resend";
 import type { Variables } from "../types/index.js";
 
