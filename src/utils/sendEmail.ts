@@ -1,17 +1,9 @@
 import fs from "fs";
 import path from "path";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import type { Variables } from "../types/index.js";
 
-export const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 465,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Función para enviar correos
 export async function sendEmail(
@@ -25,6 +17,7 @@ export async function sendEmail(
     "templates",
     `${template}.html`,
   );
+
   if (!fs.existsSync(rutaTemplate)) {
     throw new Error(`Template "${template}" no existe`);
   }
@@ -34,10 +27,14 @@ export async function sendEmail(
     html = html.replaceAll(`{{${clave}}}`, valor);
   }
 
-  await transporter.sendMail({
-    from: process.env.SMTP_FROM,
+  const { error } = await resend.emails.send({
+    from: process.env.RESEND_FROM || "onboarding@resend.dev",
     to,
     subject: variables.asunto || "Notificación",
     html,
   });
+
+  if (error) {
+    throw new Error(error.message);
+  }
 }
