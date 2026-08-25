@@ -12,14 +12,14 @@ Microservice dedicated to sending transactional emails (passwords, notifications
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=nodejs,express,ts,pnpm" />
-    <img src="https://skills.syvixor.com/api/icons?i=nodemailer,render" />
+    <img src="https://skills.syvixor.com/api/icons?i=nodemailer,render,resend" />
   </a>
   <br />
   <img src="https://img.shields.io/badge/Express_5-000000?logo=express&logoColor=fff" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff" />
-  <img src="https://img.shields.io/badge/Nodemailer-22B573?logo=gmail&logoColor=fff" />
   <img src="https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff" />
   <img src="https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=fff" />
+  <img src="https://img.shields.io/badge/Resend-000000?logo=resend&logoColor=fff" />
 </p>
 
 ## 📋 Tabla de contenidos
@@ -51,7 +51,7 @@ Microservicio backend desarrollado con Express y TypeScript enfocado en el enví
 | --------------------------- | --------------------------- |
 | Core Framework              | Express 5                   |
 | Lenguaje                    | TypeScript                  |
-| Envío de correo             | Nodemailer                  |
+| Envío de correo             | Resend                      |
 | Seguridad y Middleware      | API Key, Express Rate Limit |
 | Entorno de Ejecución en Dev | tsx (TypeScript Execute)    |
 | Administrador de Paquetes   | pnpm                        |
@@ -65,7 +65,7 @@ Antes de inicializar el proyecto, asegúrate de contar con los siguientes elemen
 
 - Node.js
 - pnpm
-- Una cuenta SMTP (Gmail u otro proveedor) con contraseña de aplicación habilitada
+- Una cuenta en Resend y genera el API KEY
 
 ---
 
@@ -93,11 +93,7 @@ Crea un archivo `.env` en la raíz del proyecto con tus credenciales:
 
 ```env
 # SMTP (Nodemailer)
-SMTP_HOST="smtp.gmail.com"
-SMTP_PORT="465"
-SMTP_USER="tu_correo@gmail.com"
-SMTP_PASS="tu_app_password"
-SMTP_FROM="POS Soporte <tu_correo@gmail.com>"
+RESEND_API_KEY="API KEY FROM RESEND"
 
 # Servicio
 PORT="3000"
